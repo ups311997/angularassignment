@@ -1,0 +1,55 @@
+<div class="heroBanner">
+    <div class="jumbotron">
+        <div [style.backgroundImage]="'url(./assets/m3.jpg)'" class="jumbotron">
+            <div class="container-fluid">
+                <br/>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <form #heroform="ngForm" class="card card-sm" (ngSubmit)="getMovies(search.value)">
+                            <div class="card-body row no-gutters align-items-center">
+                                <div class="col-auto">
+                                    <i class="fas fa-search h5 text-body"></i>
+                                </div>
+                                <!--end of col-->
+
+                                <div class="col">
+                                    <input #search class="form-control form-control-lg form-control-borderless" type="search" id="search" placeholder="Seach for Movies">
+                                </div>
+                                <!--end of col-->
+                                <div class="col-auto"></div>
+                                <button class="btn btn-lg btn-success" type="submit">Search</button>
+                            </div>
+                            <!--end of col-->
+
+                        </form>
+                    </div>
+                    <!--end of col-->
+                </div>
+            </div>
+            <h1 class="font-weight-bold text-white text-center  my-5" style="color:white;font-size:4rem;">
+                Explore Movies
+            </h1>
+
+
+        </div>
+    </div>
+</div>
+<div class="gf">
+    <h1>SEARCHED MOVIES</h1>
+    <div class="flex3">
+
+        <div class="card_container container-fluid ">
+            <div *ngFor="let movie of arrayOfMovies" class="card" style="width: 18rem;">
+                <img src={{movie.poster_path}} class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{movie.title}}</h5>
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
